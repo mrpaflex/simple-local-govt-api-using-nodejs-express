@@ -10,34 +10,38 @@ const port = 2000;
 
 const aks ={
     'oruk anam':{
-        'polution': 349000,
-        'head quarter': 'ikot ibratam',
+        'populution': 349000,
+        'headquarter': 'ikot ibratam',
         'landmark': '498008 hectare',
-        'number of villages': 71,
-        'year of creation': 1857,
+        'numberofvillages': 71,
+        'yearofcreation': 1857,
         'chairman': 'Dr. Felix'
     },
     'ikot abasi':{
-        'polution': 352010,
-        'head quarter': 'ikot abasi',
+        'populution': 352010,
+        'headquarter': 'ikot abasi',
         'landmark': '490108 hectare',
-        'number of villages': 41,
-        'year of creation': 3237,
+        'numberofvillages': 41,
+        'yearofcreation': 3237,
         'chairman': 'Gabrie Inyang'
     },
 
     'abak':{
-        'polution': 49086,
-        'head quarter': 'ediene abak',
+        'populution': 49086,
+        'headquarter': 'ediene abak',
         'landmark': '578002 hectare',
-        'number of villages': 36,
-        'year of creation': 1937,
+        'numberofvillages': 36,
+        'yearofcreation': 1937,
         'chairman': 'Mr. Joseph Edem'
     },
 
     'not':{
-        'polution': 'there no such local government in akwa ibom state, do you mean abak?'
-
+        'populution': 'unknown',
+        'headquarter': 'can\'t find',
+        'landmark': 'unknown',
+        'numberofvillages': 'unknown',
+        'yearofcreation': 'no year found',
+        'chairman': 'unknown'
     }
 
 }
@@ -45,7 +49,7 @@ app.get('/', (request, response) =>{
     response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/api/:choice', (request, response)=>{
+app.get('/:choice', (request, response)=>{
     const lga = request.params.choice.toLowerCase()
     if (aks[lga]) {
         response.json(aks[lga])
