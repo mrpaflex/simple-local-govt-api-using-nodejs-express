@@ -49,7 +49,7 @@ app.get('/', (request, response) =>{
     response.sendFile(__dirname + '/index.html')
 })
 
-app.get('/:choice', (request, response)=>{
+app.get('/api/:choice', (request, response)=>{
     const lga = request.params.choice.toLowerCase()
     if (aks[lga]) {
         response.json(aks[lga])
