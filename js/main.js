@@ -5,7 +5,7 @@ document.querySelector('#clickme').addEventListener('click', runthis);
   async function runthis(){
     const choice = document.querySelector('#choice').value;
 
-const url = `https://aks-local-local-govtt-api.onrender.com/api/${choice}`;
+const url = `/api/${choice}`;
     try{
         const response = await fetch(url);
         const data = await response.json();
